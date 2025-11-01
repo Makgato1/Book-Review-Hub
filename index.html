@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookReview Hub - Home</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/book-covers/logo.png" alt="BookReview Hub Logo"></a>
+            <span>Book review hub</span>
+        </div>
+        <nav>
+            <button class="hamburger" id="hamburger-btn">&#9776;</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="assets/images/book-covers/about-books.jpg" alt="Books in a library" class="dominant-image">
+            <h1>Welcome to BookReview Hub</h1>
+            <p>Discover, search, and review your favorite books.</p>
+        </section>
+
+        <section class="search">
+            <input type="text" id="search-input" placeholder="Search for a book...">
+            <button id="search-btn">Search</button>
+        </section>
+
+        <section class="books" id="books-list">
+            <!-- Books will be loaded here via PHP or JS -->
+        </section>
+
+        <section class="books-table">
+            <h2>Books Overview</h2>
+            <table id="books-table">
+                <thead>
+                    <tr>
+                        <th>Cover</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be populated via JS -->
+                </tbody>
+            </table>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>BookReview Hub</p>
+            <p>Address: 123 Book Street, Literature City, LC 12345</p>
+            <p>Phone: +27 21 123 4567</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/bookreviewhub" target="_blank">Facebook</a>
+                <a href="https://www.twitter.com/bookreviewhub" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/bookreviewhub" target="_blank">Instagram</a>
+            </div>
+            <p>&copy; 2025 BookReview Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
