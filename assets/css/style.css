@@ -1,0 +1,703 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #8B4513; /* SaddleBrown for book theme */
+}
+
+h2 {
+    font-size: 2em;
+    color: #A0522D; /* Sienna */
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #D2691E; /* Chocolate */
+}
+
+/* Header */
+header {
+    background-color: #FFF8DC; /* Cornsilk */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    background-color: #FFF8DC; /* Match header background */
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #8B4513;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-family: 'Georgia', serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8B4513;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #D2691E;
+    color: white;
+}
+
+/* Hamburger menu button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #8B4513;
+    padding: 10px;
+}
+
+/* Mobile nav styles */
+@media (max-width: 767px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #FFF8DC;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #D2691E;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.hero:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.hero:hover .dominant-image {
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.hero:hover h1 {
+    color: #D2691E;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero:hover p {
+    opacity: 0.8;
+    transform: translateY(-5px);
+}
+
+.dominant-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+}
+
+.search {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#search-input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#search-btn {
+    padding: 10px 20px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-btn:hover {
+    background-color: #A0522D;
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Books table styles */
+.books-table {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.books-table h2 {
+    color: #A0522D;
+    margin-bottom: 20px;
+}
+
+#books-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#books-table th,
+#books-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#books-table th {
+    background-color: #FFF8DC;
+    color: #8B4513;
+    font-weight: bold;
+}
+
+#books-table td img {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+#books-table td:nth-child(4) {
+    max-width: 300px;
+    word-wrap: break-word;
+}
+
+#books-table .review-btn {
+    padding: 8px 16px;
+    background-color: #D2691E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#books-table .review-btn:hover {
+    background-color: #A0522D;
+}
+
+.book {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.book img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.review-btn {
+    padding: 10px 20px;
+    background-color: #D2691E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.review-btn:hover {
+    background-color: #A0522D;
+}
+
+.reviews {
+    margin-top: 40px;
+}
+
+#reviews-display {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* About page */
+.about {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.about img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Contact page */
+.contact {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#contact-form label {
+    text-align: left;
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+#contact-form button {
+    padding: 10px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #A0522D;
+}
+
+/* Footer */
+footer {
+    background-color: #8B4513;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Modal styles */
+#review-modal, #success-modal, #book-reviews-modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+.close:hover {
+    color: #000;
+}
+
+/* Specific styling for book reviews modal */
+#book-reviews-modal .modal-content {
+    max-width: 600px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+#book-reviews-modal h2 {
+    color: #8B4513;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #D2691E;
+    padding-bottom: 10px;
+}
+
+#book-reviews-modal ul {
+    list-style: none;
+    padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#book-reviews-modal li {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 4px solid #D2691E;
+    position: relative;
+}
+
+#book-reviews-modal h5 {
+    color: #8B4513;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#book-reviews-modal p {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+#book-reviews-modal small {
+    color: #888;
+    font-style: italic;
+}
+#review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#review-form label {
+    font-weight: bold;
+}
+#review-form input, #review-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#review-form textarea {
+    height: 100px;
+}
+#review-form button {
+    padding: 10px;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* OK button in success modal */
+#success-ok-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#success-ok-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* View Reviews link styling */
+.view-reviews-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.view-reviews-link:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Delete review button styling */
+.delete-review-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.delete-review-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Language toggle */
+.lang-toggle {
+    display: flex;
+    gap: 5px;
+}
+
+.lang-toggle button {
+    padding: 5px 10px;
+    background-color: #FFF8DC;
+    border: 1px solid #8B4513;
+    color: #8B4513;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.lang-toggle button.active {
+    background-color: #8B4513;
+    color: white;
+}
+
+/* Star rating */
+.star-rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: #FFD700;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
+
+/* Stars in reviews modal */
+#book-reviews-modal .star {
+    color: #FFD700 !important;
+    font-size: 18px;
+    margin-right: 2px;
+}
+
+/* Video styling */
+video {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .books {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    #books-table {
+        font-size: 14px;
+    }
+
+    #books-table th,
+    #books-table td {
+        padding: 10px;
+    }
+
+    #books-table td img {
+        width: 40px;
+        height: 60px;
+    }
+
+    #search-input {
+        width: 250px;
+    }
+
+    .lang-toggle {
+        margin-top: 10px;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .dominant-image {
+        max-width: 100%;
+    }
+
+    #search-input {
+        width: 200px;
+    }
+
+    .star-rating {
+        gap: 2px;
+    }
+
+    .star {
+        font-size: 20px;
+    }
+}
